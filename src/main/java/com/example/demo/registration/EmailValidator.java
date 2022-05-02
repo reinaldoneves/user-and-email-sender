@@ -8,7 +8,9 @@ import java.util.function.Predicate;
 public class EmailValidator implements Predicate<String> {
     @Override
     public boolean test(String s) {
-//        TODO: Regex to validate email
-        return true;
+        if(s.matches("/^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?$/i")) {
+            return true;
+        }
+        return false;
     }
 }
